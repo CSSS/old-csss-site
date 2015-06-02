@@ -16,3 +16,13 @@ What we can use
 - Python + Django
 - Bootstrap
 - MySQL (SQLite?)
+
+Handy Django Commands
+---------------------
+* Create a new app: `python manage.py startapp polls`
+* Tell Django about model changes: `python manage.py makemigrations <appname>`
+* Check migration SQL: `python manage.py sqlmigrate polls <migration number>`
+* Check for project errors: `python manage.py check`
+* Apply migrations: `python manage.py migrate`
+* Open django shell: `python manage.py shell`
+* Run app tests: `python manage.py test <appname>`
