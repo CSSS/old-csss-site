@@ -1,0 +1,10 @@
+{% extends "cms\base.html" %}
+
+{% block body %}
+<div id='title'>
+    {{post.title}}
+</div>
+<div id='content'>
+    {{post.content|safe}}
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "cms\base.html" %}
+
+{% block body %}
+<div id='title'>
+    Categories
+</div>
+<div id='content'>
+    <ul>
+        {% for category in category_list %}
+        <li><a href="{% url 'cms:posts_in_category' category.name %}">{{category.name}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
