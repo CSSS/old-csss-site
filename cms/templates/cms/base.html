@@ -1,0 +1,19 @@
+{% load cms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSSS@SFU - Computer Science Student Society of Simon Fraser University</title>
+</head>
+
+<body>
+    <div class="menu-bar">
+        <ul>
+            {% get_categories as categories %}
+            {% for category in categories %}
+            <li><a href="{% url 'cms:posts_in_category' category.name %}"> {{category.name}} </a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% block body %}{% endblock %}
+</body>
+</html>
