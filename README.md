@@ -19,9 +19,9 @@ What we can use
 
 Handy Django Commands
 ---------------------
-* Create a new app: `python manage.py startapp polls`
+* Create a new app: `python manage.py startapp <appname>`
 * Tell Django about model changes: `python manage.py makemigrations <appname>`
-* Check migration SQL: `python manage.py sqlmigrate polls <migration number>`
+* Check migration SQL: `python manage.py sqlmigrate <appname> <migration number>`
 * Check for project errors: `python manage.py check`
 * Apply migrations: `python manage.py migrate`
 * Open django shell: `python manage.py shell`
