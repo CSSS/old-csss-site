@@ -13,6 +13,7 @@ class Category(models.Model):
 class Post(models.Model):
     category = models.ForeignKey(Category)
     title = models.CharField(max_length=32)
+    slug = models.SlugField(max_length=32)
     content = models.TextField()
     
     def __str__(self):
