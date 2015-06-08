@@ -8,7 +8,7 @@ class PostDetailView(generic.DetailView):
 
 class PostListView(generic.ListView):
     def get_queryset(self):
-        return Post.objects.filter(category__name = self.kwargs['name'])
+        return Post.objects.filter(category__slug = self.kwargs['slug'])
     
 class CategoryView(generic.ListView):
     model = Category
