@@ -7,7 +7,7 @@
 <div id='content'>
     <ul>
         {% for post in post_list %}
-        <li><a href="{% url 'cms:post' post.category.name post.id %}">{{post.title}}</a></li>
+        <li><a href="{% url 'cms:post' post.category.slug post.slug %}">{{post.title}}</a></li>
         {% endfor %}
     </ul>
 </div>
