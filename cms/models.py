@@ -18,3 +18,13 @@ class Post(models.Model):
     
     def __str__(self):
         return self.title
+
+class Announcement(models.Model):
+    title = models.CharField(max_length=32,unique=True)
+    author = models.CharField(max_length=32,unique=True)
+    slug = models.SlugField(max_length=32,unique=True)
+    content = models.TextField()
+    created = models.DateTimeField()
+
+    def __str__(self):
+        return self.title
