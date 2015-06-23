@@ -75,7 +75,7 @@ occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
         for announcement in announcements:
             try:
                 a = Announcement(**announcement)
-                a.save
+                a.save()
                 self.stdout.write(announcement['title'] + ' announcement created')
             except IntegrityError:
                 self.stdout.write(announcement['title'] + ' announcement skipped')
