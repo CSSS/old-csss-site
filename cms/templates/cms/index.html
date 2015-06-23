@@ -1,9 +1,0 @@
-{% if post_list %}
-    <ul>
-    {% for post in post_list %}
-        <li><a href="/cms/{{ post.id }}/">{{ post.title }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
