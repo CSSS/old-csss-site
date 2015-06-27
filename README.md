@@ -26,6 +26,7 @@ Handy Django Commands
 * Apply migrations: `python manage.py migrate`
 * Open django shell: `python manage.py shell`
 * Run app tests: `python manage.py test <appname>`
+* Populate database: `python manage.py populate`
 
 Design
 ------

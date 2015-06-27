@@ -1,0 +1,16 @@
+{% extends "cms/base.html" %}
+
+{% block body %}
+
+Announcements
+
+<div class='container-fluid'>
+    <div class='row'>
+        {% for announcement in announcement_list %}
+        <div class='title'>{{announcement.title}}</div>
+        <div class='details'>posted by {{announcement.author}} on {{announcement.created}}</div>
+        <div class = 'content'>{{announcement.content}}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
