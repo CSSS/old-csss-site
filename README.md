@@ -26,3 +26,15 @@ Handy Django Commands
 * Apply migrations: `python manage.py migrate`
 * Open django shell: `python manage.py shell`
 * Run app tests: `python manage.py test <appname>`
+
+Design
+------
+- Logo top-left
+- Navbar of categories to the right of that
+- Home page contains announcements and carousel with images
+- Topbar follows user down the page (but shrinks)
+- Footer contains: copyright, icons, csss@sfu.ca email
+- Coloured side bars?
+- Announcement format: Title, "By <person> on <date>", content
+- Use Frosh theme colours every year (for side bars?)
+- Side bars: shadows on the edges for depth
