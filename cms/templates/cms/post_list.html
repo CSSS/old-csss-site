@@ -1,9 +1,7 @@
 {% extends "cms/base.html" %}
 
 {% block body %}
-<div id='title'>
-    {{post_list.1.category.name}}
-</div>
+<div id='title'>{{post_list.1.category.name}}</div>
 <div id='content'>
     <ul>
         {% for post in post_list %}

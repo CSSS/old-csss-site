@@ -2,14 +2,16 @@
 
 {% block body %}
 
-Announcements
+<span id='title'>Announcements</span>
 
 <div class='container-fluid'>
     <div class='row'>
         {% for announcement in announcement_list %}
-        <div class='title'>{{announcement.title}}</div>
-        <div class='details'>posted by {{announcement.author}} on {{announcement.created}}</div>
-        <div class = 'content'>{{announcement.content}}</div>
+				<div id='announce'>
+					<div class='announce_title'>{{announcement.title}}</div>
+					<div class='details text-muted'>posted by {{announcement.author}} on {{announcement.created}}</div>
+					<div class ='content'>{{announcement.content}}</div>
+				</div>
         {% endfor %}
     </div>
 </div>

@@ -1,4 +1,5 @@
 from django.db import models
+from django_markdown.models import MarkdownField
 
 class Category(models.Model):
     class Meta:
@@ -14,7 +15,7 @@ class Post(models.Model):
     category = models.ForeignKey(Category)
     title = models.CharField(max_length=32,unique=True)
     slug = models.SlugField(max_length=32,unique=True)
-    content = models.TextField()
+    content = MarkdownField()
     
     def __str__(self):
         return self.title

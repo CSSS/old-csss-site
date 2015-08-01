@@ -11,7 +11,8 @@
 
     <!-- Bootstrap -->
     <link href="{% static 'cms/css/bootstrap.min.css' %}" rel="stylesheet">
-
+		<link href="{% static 'cms/css/style.css' %}" rel="stylesheet">
+		
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -20,7 +21,7 @@
     <![endif]-->
   </head>
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -30,7 +31,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{% url 'cms:index' %}"><b>CSSS</b></a>
+          <a class="navbar-brand" href="{% url 'cms:index' %}"><img height="32" width="32" src="{% static 'cms/images/logo.png' %}"/></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -55,11 +56,24 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-offset-1 col-md-10">
+            <div class="col-md-offset-1 col-md-10" id="content">
                 {% block body %}{% endblock %}
             </div>
         </div>
     </div>
+		
+		<footer class="footer">
+				<div class="container-fluid">
+						<div class="row" id="footer-links">
+								<div class="col-xs-3">CSSS &copy; 2015</div>
+								<div class="col-xs-offset-5 col-xs-4 text-right">
+										<a href="https://www.facebook.com/groups/2203105681/">Facebook</a> |
+										<a href="https://twitter.com/sfucsss">Twitter</a> |
+										<a href="https://github.com/CSSS">GitHub</a>
+								</div>
+						</div>
+				</div>
+		</footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

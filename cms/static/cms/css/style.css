@@ -1,0 +1,67 @@
+.navbar-brand img {
+	margin-top: -5px;
+}
+
+body { 
+	padding-top: 50px;
+	background-color: #6A6A75;
+	
+}
+#title {
+	font-weight: 700;
+	font-size: xx-large;
+}
+
+.announce_title {
+	font-weight: 700;
+	font-size: x-large;
+}
+
+.details {
+	font-style: italic;
+	font-size: small;
+	margin-bottom: 1em;
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	border-color: #6A6A75;
+	text-align: right;
+}
+
+#content {
+  background-color: #FFFFFA;
+	box-shadow: 0px 0px 6px 7px rgba(0,0,0,0.20);
+	height: 100%;
+	padding-bottom: 5em;
+}
+
+#announce {
+	margin: 1em auto 1em auto;
+	padding: 0.25em 0.5em 0.25em 0.5em;
+	background-color: #EEEEEE;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #E7E7E7;
+}
+
+.footer p {
+	margin-top: 1em;
+}
+.footer-button {
+	background-color: #AAAAAA;
+	width: 16px;
+	height: 16px;
+}
+
+.footer a {
+	text-decoration: none;
+	color: #AAAAAA;
+}
+
+#footer-links {
+	margin-top: 1em;
+}
