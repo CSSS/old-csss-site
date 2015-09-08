@@ -10,7 +10,7 @@
 				<div id='announce'>
 					<div class='announce_title'>{{announcement.title}}</div>
 					<div class='details text-muted'>posted by {{announcement.author}} on {{announcement.created}}</div>
-					<div class ='content'>{{announcement.content}}</div>
+					<div class ='content'>{{announcement.content|safe}}</div>
 				</div>
         {% endfor %}
     </div>
