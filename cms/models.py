@@ -22,7 +22,7 @@ class Post(models.Model):
 
 class Announcement(models.Model):
     title = models.CharField(max_length=32,unique=True)
-    author = models.CharField(max_length=32,unique=True)
+    author = models.CharField(max_length=32)
     slug = models.SlugField(max_length=32,unique=True)
     content = models.TextField()
     created = models.DateTimeField()
