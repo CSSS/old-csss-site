@@ -11,6 +11,7 @@ class PostListView(generic.ListView):
         return Post.objects.filter(category__slug = self.kwargs['slug'])
     
 class AnnouncementListView(generic.ListView):
+    paginate_by = 5
     def get_queryset(self):
-        return Announcement.objects.all().order_by('-created')[:5]
+        return Announcement.objects.all().order_by('-created')
     
