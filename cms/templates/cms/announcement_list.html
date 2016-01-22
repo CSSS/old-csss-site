@@ -9,9 +9,10 @@
         <div class = 'col-md-12'>
         {% for announcement in announcement_list %}
 				<div id='announce'>
-					<div class='announce_title'>{{announcement.title}}</div>
+					<a href="{% url 'cms:announcement' announcement.slug %}"><div class='announce_title'>{{announcement.title}}</div></a>
 					<div class='details text-muted'>posted by {{announcement.author}} on {{announcement.created}}</div>
 					<div class ='content'>{{announcement.content|safe}}</div>
+					<a href="{% url 'cms:announcement' announcement.slug %}#disqus_thread">0 Comments</a>
 				</div>
         {% endfor %}
         </div>
@@ -27,4 +28,5 @@
         </ul>
     </div>
 </div>
+<script id="dsq-count-scr" src="//sfucsss.disqus.com/count.js" async></script>
 {% endblock %}
