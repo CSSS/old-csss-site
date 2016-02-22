@@ -1,6 +1,29 @@
 CSSS Website
 ============
 
+### NEW STUFF
+
+# Goal: Enable students to Create, Innovate & Inspire
+- A place where students can share their ideas & creations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## OLD STUFF
 What it needs
 -------------
 - New exec list, with photos
