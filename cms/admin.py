@@ -12,5 +12,5 @@ class PostAdmin(MarkdownModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
 
 @admin.register(Announcement)
-class PostAdmin(admin.ModelAdmin):
+class AnnouncementAdmin(MarkdownModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
