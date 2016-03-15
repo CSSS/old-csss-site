@@ -9,6 +9,9 @@ class PostDetailView(generic.DetailView):
 class PostListView(generic.ListView):
     def get_queryset(self):
         return Post.objects.filter(category__slug = self.kwargs['slug'])
+
+class AnnouncementDetailView(generic.DetailView):
+    model = Announcement
     
 class AnnouncementListView(generic.ListView):
     paginate_by = 5

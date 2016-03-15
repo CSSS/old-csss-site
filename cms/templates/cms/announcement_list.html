@@ -6,26 +6,28 @@
 <span id='title'>Announcements</span>
 
 <div class='container-fluid'>
-    <div class='row'>
-        <div class = 'col-md-12'>
-        {% for announcement in announcement_list %}
-				<div id='announce'>
-					<div class='announce_title'>{{announcement.title}}</div>
-					<div class='details text-muted'>posted by {{announcement.author}} on {{announcement.created}}</div>
-					<div class ='content'>{{announcement.content|markdown}}</div>
-				</div>
-        {% endfor %}
-        </div>
+  <div class='row'>
+    <div class = 'col-md-12'>
+      {% for announcement in announcement_list %}
+      <div id='announce'>
+	<a href="{% url 'cms:announcement' announcement.slug %}"><div class='announce_title'>{{announcement.title}}</div></a>
+	<div class='details text-muted'>posted by {{announcement.author}} on {{announcement.created}}</div>
+	<div class ='content'>{{announcement.content|markdown}}</div>
+        <a href="{% url 'cms:announcement' announcement.slug %}#disqus_thread">0 Comments</a>
+      </div>
+      {% endfor %}
     </div>
-    <div class="row">
-        <ul class="pager col-md-12">
-            {% if page_obj.has_previous %}
-            <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><span aria-hidden="true">&larr;</span> Newer</a></li>            
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li class="next"><a href="?page={{ page_obj.next_page_number }}">Older <span aria-hidden="true">&rarr;</span></a></li>
-            {% endif %}
-        </ul>
-    </div>
+  </div>
+  <div class="row">
+    <ul class="pager col-md-12">
+      {% if page_obj.has_previous %}
+      <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><span aria-hidden="true">&larr;</span> Newer</a></li>            
+      {% endif %}
+      {% if page_obj.has_next %}
+      <li class="next"><a href="?page={{ page_obj.next_page_number }}">Older <span aria-hidden="true">&rarr;</span></a></li>
+      {% endif %}
+    </ul>
+  </div>
 </div>
+<script id="dsq-count-scr" src="//sfucsss.disqus.com/count.js" async></script>
 {% endblock %}
