@@ -2,7 +2,7 @@ How to Contribute
 =================
 
 Welcome! And thank you for wanting to make our site better. Open discussion
-for site improvements can be found [here](CSSS/csss-site#18).
+for site improvements can be found [here](CSSS/csss-site/issues/18).
 
 Here is some information that can help you get started:
 
