@@ -16,9 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from . import views
+
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url('^markdown/', include( 'django_markdown.urls')),
-    url(r'^frosh/', include('frosh.urls')),
-    url(r'^', include('cms.urls', namespace="cms")),
+    url(r'^frosh2018/', views.frosh2018, name='frosh2018'),
+    url(r'^$', views.index, name='index'),
 ]
