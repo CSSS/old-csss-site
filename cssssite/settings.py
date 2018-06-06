@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'cms',
     'django_markdown',
+    'frosh',
 )
 
 MIDDLEWARE_CLASSES = (
