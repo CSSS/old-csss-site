@@ -85,7 +85,7 @@
 
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-4 mt centered">
-                    <button type="button" class="btn btn-warning" onclick='window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSc4_NHobwOhyaNWXDNgb_zkD-JuNUPt9rC6L9giQC7LxLHG2A/viewform?usp=sf_link";'>Sign Up Now!</button>
+                    <button type="button" class="btn btn-warning" onclick='window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdHQFT8wVPzQWr6WEaNLvbVRt7A-3_mK2IBSjjq3K0ZllizYw/closedform";'>Sign Up Now!</button>
                     <button type="button" class="btn btn-default" onclick='window.location.href = "frosh2018";'><a href="frosh2018">Enter Website!</a></button>
                 </div>
             </div>
@@ -106,11 +106,11 @@
             <!-- Placed at the end of the document so the pages load faster -->
             <script>
                 function registerRedirect() {
-                    window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSc4_NHobwOhyaNWXDNgb_zkD-JuNUPt9rC6L9giQC7LxLHG2A/viewform?usp=sf_link";
+                    window.location.href = "https://docs.google.com/forms/d/1KcNNdA1Iy11nPLnjwRf1H5aIw_VuB8cx5CHDvjtShYI/viewform?usp=send_form";
                 }
 
                 function mainsiteRedirect() {
-                    window.location.href = "frosh2018";
+                    window.location.href = "mainsite/frosh.html";
                 }
             </script>
             <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
