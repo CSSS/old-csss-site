@@ -1,4 +1,4 @@
-# About This Repository
+# [SFU Computing Science Student Society](http://sfucsss.org)
 
 This is the repository for the Simon Fraser University Computing Science Student Society's offical website. Please note that this repository is a work in progress.
 
