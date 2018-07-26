@@ -1,15 +1,13 @@
 # [SFU Computing Science Student Society](http://sfucsss.org)
 
-Want to help? Check out our [Contributors](CONTRIBUTORS.md) file.
+This is the repository for the Simon Fraser University Computing Science Student Society's offical website. Please note that this repository is a work in progress.
 
-*THIS REPOSITORY IS A WORK IN PROGRESS*
+The live version of the site can be accessed at [sfucsss.org](http://sfucsss.org)
 
-[Instructions for launching our website](LAUNCH.md)
+Want to help with development? Check out the [Contributors](CONTRIBUTORS.md) file.
 
-[Instructions for Using our website](instructions.pdf)
+# Using This Repository
 
-[Credentials for Showing Facebook Calendar on our website](https://github.com/CSSS/webmaster-info/blob/master/README.md#accounts-used-to-share-facebook-calendar-on-csss-website)
+[How to launch the website](LAUNCH.md)
 
-
-
-
+[How to use the website](instructions.pdf)
