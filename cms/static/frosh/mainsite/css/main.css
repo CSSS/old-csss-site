@@ -667,7 +667,7 @@ td a {
 .table-schedule tr:nth-child(odd) {}
 
 .table-title {
-    background-color: #00B75A;
+    background-color: #08A8CC;
     color: #FFFFFF;
 }
 
@@ -677,7 +677,7 @@ td a {
 
 .emphasis,
 .question {
-    color: #914220;
+    color: #CC0854;
 }
 
 .alt_emphasis {
@@ -695,11 +695,11 @@ td a {
 
 h3 {
     color: white;
-    background-color: #00B75A;
+    background-color: #08A8CC;
     padding: 5px;
 }
 
-.package ul li,
+.package ul li
 {
     color: #e88530;
 }
