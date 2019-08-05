@@ -1,0 +1,378 @@
+Summary:
+Four Page "themes" in a dashboard:
+About (General/Exec/Photos/Docs/Contact)
+Events (Upcoming/Froshweek/Workshops)
+Projects (Hack Time/Dev Tools/Team Names/CSSS Github)
+Comp Sci Guide ("Walkthrough"/Course Map/Software/Co-op)
+
+Colin Woodbury May 20 2015 16:24
+Software stack:
+Python + Django (a web framework)
+Bootstrap (a CSS suite for making nice web pages. Made by Twitter)
+MySQL as a database
+
+Corbett Gildersleve May 20 2015 16:51
+do you want to use a premade template or create it from scratch or get various plugins.
+
+Colin Woodbury May 20 2015 22:56
+We could take a bootstrap template as a base and modify it.
+
+Colin Woodbury May 21 2015 15:10
+We could use org-chart to display the course map.
+
+Mircea Taras May 22 2015 21:36
+I do have a soft spot for bootstrap in my heart
+
+David Miiller May 23 2015 00:01
+Bootstrap for drupal wasn't awesome though
+
+Mircea Taras May 23 2015 08:53
+@Fundai what do you mean, it was excellent. My site didn't fall apart or anything, and it was mobile-ready OOTB
+
+Mircea Taras May 23 2015 09:00
+@fosskers If we use the Bootstrap CDN, are we still able to provide a secondary stylesheet to customize the interface?
+
+David Miiller May 23 2015 12:23
+@Rikoru Oh yeah, Bootstraps definitely really great, we just found it to be a bit of overkill with Drupal. Had some issues with the bootstrap based themes we used. Did you guys end up using it in the end?
+
+Mircea Taras May 23 2015 13:29
+@Fundai Yeah, literally just "Bootstrap for Drupal" theme
+
+Antonio Abaya May 23 2015 13:47
+So what's the plan? Who's doing what where when how?
+
+Mircea Taras May 23 2015 14:01
+I believe David and I were supposed to go through the Django tutorial
+
+David Miiller May 23 2015 16:05
+Can do
+
+Colin Woodbury May 23 2015 21:43
+@Rikoru Yeah we can add any CSS we want.
+
+Colin Woodbury May 29 2015 16:30
+Hey guys, I'm planning a django study session for tomorrow
+Basically just be on here during the day and we can work through things together
+
+Mircea Taras May 29 2015 16:46
+When-abouts would we do this, because I'm busy up until four-ish
+
+Colin Woodbury May 29 2015 16:52
+I'll be at it all day
+
+Mircea Taras May 29 2015 17:36
+oh ok
+
+Antonio Abaya May 29 2015 18:15
+What's the plan? Just doing django things? Try and set up a test CSSS page we can fuck around with? Burn Rape Pillage?
+
+Mircea Taras May 29 2015 18:21
+All of the above?
+
+David Miiller May 30 2015 12:16
+Wont be able to be on to study today, but I can look through stuff on my own
+
+Colin Woodbury May 30 2015 13:23
+Hey guys
+I'll be getting into it soon
+Who has a basic django environment set up?
+
+Colin Woodbury May 30 2015 13:46
+by the way
+Python 2 or 3?
+
+Colin Woodbury May 30 2015 13:51
+Just as a rough poll, go type python --version into your terminal and tell me what you get.
+
+Siddhant Agrawal May 30 2015 13:56
+Sorry I'm out I'll try and get on later in the day
+
+Colin Woodbury May 30 2015 14:00
+np just ssh into your laptop with your phone
+;)
+
+Siddhant Agrawal May 30 2015 14:01
+How do
+
+Colin Woodbury May 30 2015 14:07
+you'd have to have a port open on your laptop listening for incoming connections, so I doubt itll work
+
+Siddhant Agrawal May 30 2015 14:24
+Ya I don't think I ever opened one
+
+Colin Woodbury May 30 2015 14:26
+probably not
+
+Antonio Abaya May 30 2015 17:41
+I normally use python 2.7, but switching over to 3 shouldn't be a problem. Django is compatible with both right?
+
+Colin Woodbury May 30 2015 21:53
+Yeah. What distro are you on?
+
+Mircea Taras May 30 2015 23:09
+Xubuntu 14.04
+
+Mircea Taras May 30 2015 23:21
+(also, sorry for not being here, things just got out of control)
+
+Colin Woodbury May 31 2015 17:36
+The site needs a new URL.
+csss.ca is already taken
+
+Colin Woodbury May 31 2015 17:50
+It also occurs to me that we're probably fine to use SQLite
+As the only thing we need dynamic storage for is front-page accouncements
+
+Colin Woodbury May 31 2015 21:18
+Interesting, django seems to only make a MV distinction, instead of a MVC one.
+Controller-like code is just done in the view, it seems.
+
+Corbett Gildersleve May 31 2015 21:50
+interesting. I didn't look at Django much in CMPT 470. Our group used Web2py instead, which allowed for yout o use the MVC or make the controler create the view or embed controller-like code in the view.
+I wonder if Django is flexible like that or if it's just how the decided to do things
+
+Colin Woodbury May 31 2015 21:51
+Seems like you only have a view.py and a model.py file.
+And they've made database access really simple
+This is all you need to make a new table:
+class Question(models.Model):
+    question_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
+
+Corbett Gildersleve May 31 2015 21:52
+nice
+
+Colin Woodbury May 31 2015 21:53
+Some view code:
+def detail(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    return render(request, 'polls/detail.html', {'question': question})
+
+Antonio Abaya Jun 01 2015 07:24
+django is using mvc, it calls controllers as views and views as templates
+they're a bit 'unique' that way
+
+Colin Woodbury Jun 01 2015 21:38
+Thoughts on Generic Views?
+
+Colin Woodbury Jun 01 2015 21:45
+Activity display also seems to be working --->
+
+Antonio Abaya Jun 02 2015 08:34
+Generic Views for what? They have their use.
+
+Colin Woodbury Jun 02 2015 10:32
+My brief flirt with them gave me the impression that they are too abstacted
+
+Antonio Abaya Jun 02 2015 12:55
+They're like a shortcut to saying get this object or list using a private key/number and use a template
+So for our website, let's say we have a Model we use as a 'page'
+class Post(models.Model):
+    title = models.CharField(max_length=32)
+    content = models.CharField()
+A post could be our 'About' page, or a specific project or a newsletter posting
+Instead of writing
+def get_post(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    return render(request, 'path/to/template.html', {'post':post})
+We can write
+class PostDetailView(generic.DetailView):
+    model = Post
+which in my opinion looks cleaner, is shorter to write, less chance to mess things up, and let's django deal with it instead of us
+We can extend our model to include a Category
+class Category(models.Model):
+    name = models.CharField(max_length=32)
+
+class Post(models.Model):
+    category = models.ForeignKey(Category)
+    #other post fields ...
+Now each post belongs to a category. A category could be an item in the menu bar (About,Events,Projects,Comp Sci Guide,etc). Clicking a category would bring up all the posts in that category. It's view could be written as
+class PostListView(generic.ListView):
+    def get_queryset(self):
+        return Post.filter(category__pk = pk)
+instead of
+def posts_in_category(request,pk):
+    post_list = Post.filter(category__pk = pk)
+   return render(request, 'path\to\template.html', {'post_list':post_list})
+Basically, it's a way to minimize boilerplate copy paste stuff
+
+Colin Woodbury Jun 02 2015 13:00
+Ok, that's seems nicer then.
+Let's discuss more in person tomorrow after the meeting
+
+Antonio Abaya Jun 04 2015 19:10
+So... python 2 or 3? Or just write code compatible with both?
+
+Colin Woodbury Jun 04 2015 20:31
+3
+
+Antonio Abaya Jun 04 2015 20:37
+db.sqlite3 - to .gitignore or not to .gitignore, that is the question
+
+Colin Woodbury Jun 04 2015 22:08
+hm
+That's tricky, if we go ahead with your proposal of "all content in DB"
+
+Antonio Abaya Jun 04 2015 22:09
+and git can't diff sqlite files
+
+Colin Woodbury Jun 04 2015 22:10
+It means we wouldn't be able to edit content on our local git copies with the DB in source control
+It can diff binaries
+
+Antonio Abaya Jun 04 2015 22:10
+it'll know things inside changed but not how
+
+Colin Woodbury Jun 04 2015 22:11
+Intuitively putting the DB in source control feels a bit off for me
+Feels like that's asking for merge nightmares
+
+Antonio Abaya Jun 04 2015 22:11
+same
+prob just best to just ignore it
+
+Colin Woodbury Jun 04 2015 22:12
+But if we don't, we can never edit site content locally. Which means...
+No dynamic content?
+
+Antonio Abaya Jun 04 2015 22:12
+We can edit the site online through the admin panel
+
+Colin Woodbury Jun 04 2015 22:13
+Then in that case, all we need to do is make the skeleton site work
+Launch that, then give it content through the admin interface
+If we all had local DBs we could test content addition manually
+I'm trying to think of what could go wrong with this
+
+Antonio Abaya Jun 04 2015 22:15
+That works, I have a skeleton, really bare bones, thing working right now. Not pretty or anything, but get's my idea across. I'll push it up in a bit.
+
+Colin Woodbury Jun 04 2015 22:16
+What if we did half half?
+
+Antonio Abaya Jun 04 2015 22:16
+?
+
+Colin Woodbury Jun 04 2015 22:17
+Like does program info/exec bios/etc need to be dynamic?
+I can see things like general announcements being that
+
+Antonio Abaya Jun 04 2015 22:17
+Well bios and program info do change, just not often.
+
+Colin Woodbury Jun 04 2015 22:17
+I guess in your model everything is dynamic, yeah?
+even what selection of pages there are?
+
+Antonio Abaya Jun 04 2015 22:18
+yeah
+You can easily add new pages and menu things through the admin panel
+Do I not have push access to csss/csss-site.git? seems like a pain to push to my repo then pull request instead of just pushing up a branch
+
+Colin Woodbury Jun 04 2015 22:27
+Haha yeah that's the way we'll be doing it. Result is the same.
+I just added you to the team
+Sid and I won't even push to the main repo
+All our stuff will be PR's too
+
+Antonio Abaya Jun 04 2015 22:32
+Well it's up there somewhere, I'll be here for a bit if you have questions on how it works.
+
+Colin Woodbury Jun 04 2015 22:40
+Thanks! I'm going to check it out tomorrow
+I'm just fixing my btsync setup and then heading to bed
+
+Antonio Abaya Jun 04 2015 22:41
+Aight, cya
+
+Colin Woodbury Jun 04 2015 23:01
+All fixed
+Night buddy
+
+Colin Woodbury Jun 07 2015 15:03
+Hey @asabaya3 I merged your branch. Can you check out my latest PR?
+
+Antonio Abaya Jun 07 2015 22:18
+Commented on stuff. Would have merged your commit, but I don't seem to have write access.
+
+Colin Woodbury Jun 07 2015 22:27
+Just give it a thumbs up on there and I'll take care of it.
+The conversation is on-going, though.
+
+Antonio Abaya Jun 07 2015 22:50
+replied
+
+Antonio Abaya Jun 08 2015 15:54
+Just realized an interesting scenario because we .gitignore db.sqlite3. How does django deal with migrations? Should migrations even be commited? My database might not look like yours, therefore our migrations would be different. Thought about this when I was changing the model to implement #3
+I feel like it should be .gitignored and everyone would just be responsible for keeping their own databases up to date.
+Also, I'm thinking about enforcing the uniqueness of Category and Post names. Thoughts?
+
+Colin Woodbury Jun 08 2015 15:58
+Are migration not just descriptions of the models?
+They just say how models have changed and how that translates to SQL, not what data is in the DB.
+In which case yes, migrations definitely need to be tracked. That's the whole point of using them, so that devs can agree on what DB tables look like.
+
+Antonio Abaya Jun 08 2015 16:10
+Migrations have an order to them right? The files in /migrations are labeled 0001something.py, 0002.... So what if we both make changes to the model, so the contents of our migrations/0003_someshit.py would be different right? How does django deal with that?
+
+Colin Woodbury Jun 08 2015 16:21
+We'll just have to dodge that as rigorously as possible
+
+Antonio Abaya Jun 08 2015 16:27
+Alright, how about making Category and Post names unique? also their slugs? I feel like names and slugs should be unique to make it simple to do Post.objects.get(slug == slug)
+
+Colin Woodbury Jun 08 2015 16:29
+I've never heard the term slug before
+
+Antonio Abaya Jun 08 2015 16:30
+A slug is a URL friendly name like 'comp-sci-guide' instead of 'Comp%20Sci%20Guide'.
+http://stackoverflow.com/questions/427102/what-is-a-slug-in-django
+
+Colin Woodbury Jun 08 2015 16:32
+Yeah those all should be unique
+
+Colin Woodbury Jun 15 2015 21:43
+Looks good
+Time for some styling, I think
+
+Antonio Abaya Jun 19 2015 03:51
+Do you already have resources for banners, logos, etc?
+Or a general idea of how you want it to look?
+
+Mircea Taras Jun 19 2015 09:22
+i can make img resources
+gear.png
+arrow-left.png
+arrow-right.png
+mail.png
+phone.png
+person.png
+star.png
+(those were all for an old project)
+
+Colin Woodbury Jun 19 2015 09:55
+neat
+Can the two of you come to our hack time tomorrow? We can make some design decisions if you do
+
+Mircea Taras Jun 19 2015 11:27
+What time should we show up
+
+Antonio Abaya Jun 19 2015 13:12
+Sure, I can make it
+
+Colin Woodbury Jun 19 2015 13:13
+Well we usually do 10:30
+When I get there depends on how quickly the dentist goes
+
+David Miiller Jun 19 2015 13:21
+I mentioned at the meeting I can make it too, I'll take a shot at getting up there for it
+
+Colin Woodbury Jun 19 2015 23:51
+shoot for noon tomorrow boys
+
+Mircea Taras Jun 20 2015 00:13
+Oh ok, good I can sleep in
+(Especially if I decide to take transit)
+
+Mircea Taras Jun 20 2015 12:14
+I'm just trying to pay for parking
