@@ -19,6 +19,6 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'^frosh2018/', views.frosh2018, name='frosh2018'),
+    url(r'^frosh2019/', views.frosh2019, name='frosh2019'),
     url(r'^$', views.index, name='index'),
 ]
