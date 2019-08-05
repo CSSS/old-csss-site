@@ -1,2 +1,5 @@
 *.pyc
 db.sqlite3
+migrations/
+.viminfo
+.cache/
