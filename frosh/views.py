@@ -5,5 +5,5 @@ from django.shortcuts import render
 def index(request):
 	return render(request, 'frosh/index.html')
 
-def frosh2018(request):
+def frosh2019(request):
 	return render(request, 'frosh/frosh.html')
