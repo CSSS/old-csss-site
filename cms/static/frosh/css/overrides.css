@@ -122,18 +122,18 @@ h1 {
 }
 
 .navbar-inverse {
-    background-color: #00B75A;
-    border-color: #00B75A;
+    background-color: #08A8CC;
+    border-color: #08A8CC;
 }
 
 .navbar-inverse .navbar-nav>.active>a,
 .navbar-inverse .navbar-nav>.active>a:hover,
 .navbar-inverse .navbar-nav>.active>a:focus {
-    background-color: #b7005d;
+    background-color: #CC0854;
 }
 
 .navbar-header a img {
-    background-color: #00B75A;
+    background-color: #08A8CC;
     padding: 4px 10px 4px 0px;
 }
 
@@ -150,8 +150,8 @@ h1 {
 }
 
 .carousel-indicators .active {
-    background-color: #914220;
-    border: 2px solid #914220;
+    background-color: #CC0854;
+    border: 2px solid #CC0854;
 }
 
 #carousel {
@@ -199,7 +199,7 @@ h1 {
 
 #footerwrap,
 #footerwrap a {
-    background-color: #00B75A;
+    background-color: #08A8CC;
     color: white;
     margin-top: 10px;
     padding-bottom: 5px;
