@@ -1,13 +1,8 @@
-# [SFU Computing Science Student Society](http://sfucsss.org)
+website
+=======
+## what it is
+this repository contains the code of the old webpage of the Computing Science Student Society (CSSS) of Simon Fraser University (SFU). 
+This was the previous website accessible from `sfucsss.org`.
 
-This is the repository for the Simon Fraser University Computing Science Student Society's offical website. Please note that this repository is a work in progress.
+The repository for the new website can be found [here](https://github.com/CSSS/csss-site). 
 
-The live version of the site can be accessed at [sfucsss.org](http://sfucsss.org)
-
-Want to help with development? Check out the [Contributors](CONTRIBUTORS.md) file.
-
-# Using This Repository
-
-[How to launch the website](LAUNCH.md)
-
-[How to use the website](instructions.pdf)
